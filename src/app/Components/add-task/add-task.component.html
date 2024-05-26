@@ -1,0 +1,43 @@
+<div class="min-div" >
+    <div class="div2">
+      <form [formGroup]="taskForm">
+        <h1 class="addh1">Add New Task</h1>
+        <div class="form-group" class=inputmaindiv>
+          <label class="label-font">Task Id</label><br>
+          <input type="text" formControlName="id" placeholder="Please enter the task name" class="form-control" id="id"  required class="inputcss">
+          <div *ngIf="f.id.touched && f.id.errors" class="invalid-feedback">
+            <div *ngIf="f.id.errors.required" class="err">Task Id is required</div>
+        </div>
+        </div>
+        <div class="form-group" class=inputmaindiv>
+          <label class="label-font">Task Name</label><br>
+          <input type="text" formControlName="title" placeholder="Please enter the task name" class="form-control" id="title"  required class="inputcss">
+          <div *ngIf="f.title.touched && f.title.errors" class="invalid-feedback">
+            <div *ngIf="f.title.errors.required" class="err">Task Name is required</div>
+        </div>
+        </div>
+        <div class="form-group" class=inputmaindiv>
+          <label  class="label-font">Task Description</label><br>
+          <textarea formControlName="description" placeholder="Please enter the task Description" class="form-control" id="description"  class="inputcss"></textarea>
+          <div *ngIf="f.description.touched && f.description.errors" class="invalid-feedback">
+            <div *ngIf="f.description.errors.required" class="err">Task Description is required</div>
+        </div>
+        </div>
+        <div class="form-group" class=inputmaindiv>
+          <label  class="label-font">Task Date</label><br>
+          <input formControlName="date" type="date" placeholder="Please enter the task Date" class="form-control" id="date"  class="inputcss">  
+          <div *ngIf="f.date.touched && f.date.errors" class="invalid-feedback">
+            <div *ngIf="f.date.errors.required" class="err">Task Date is required</div>
+        </div>
+        </div>
+        <div style="display: flex;justify-content:space-between;">
+        <div>
+        <button type="submit" class="buttonstyle" (click)="backbutton()">Back</button>
+        </div>
+        <div>
+        <button type="submit" class="buttonstyle" (click)="addtask()">{{params.id?'Update':'Add'}} Task</button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>

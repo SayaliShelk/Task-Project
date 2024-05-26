@@ -1,0 +1,21 @@
+
+<div class="label" (click)="addproduct()">Add Task</div>
+
+<h1>Task List</h1>
+
+<table id="customers">
+  <tr>
+    <th>Task Name</th>
+    <th>Task Description</th>
+    <th>Task Date</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let task of tasklist">
+    <td>{{task.title}}</td>
+    <td>{{task.description}}</td>
+    <td>{{task.date}}</td>
+    <td><img src="../../assets/pencilimage.png" style="width: 20px;height: 20px;" (click)="update(task.id)"></td>
+    <td><img src="../../assets/delete.png" style="width: 20px;height: 20px;" (click)="delete(task.id)"></td>
+  </tr>
+</table>
